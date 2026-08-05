@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-danger text-white">
+                    <h2 class="text-center">
+                        Delete Student
+                    </h2>
+                </div>
+
+                <div class="card-body">
+
+                    <form method="POST">
+
+                        <div class="mb-3">
+
+                            <label>
+                                Roll Number
+                            </label>
+
+                            <input
+                                type="number"
+                                name="rollno"
+                                class="form-control"
+                                placeholder="Enter Roll Number"
+                                required>
+
+                        </div>
+
+                        <button
+                            class="btn btn-danger w-100">
+
+                            Delete Student
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

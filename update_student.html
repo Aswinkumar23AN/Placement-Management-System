@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-info text-white">
+            <h2 class="text-center">Update Student</h2>
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="mb-3">
+                    <label>Roll Number</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        name="rollno"
+                        placeholder="Enter Roll Number"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="name"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Department</label>
+                    <select
+                        class="form-select"
+                        name="department"
+                        required>
+
+                        <option>CSE</option>
+                        <option>IT</option>
+                        <option>ECE</option>
+                        <option>EEE</option>
+                        <option>MECH</option>
+                        <option>CIVIL</option>
+
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>CGPA</label>
+                    <input
+                        type="number"
+                        step="0.01"
+                        min="0"
+                        max="10"
+                        class="form-control"
+                        name="cgpa"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Skills</label>
+                    <textarea
+                        class="form-control"
+                        name="skills"
+                        rows="3"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label>Placement Status</label>
+
+                    <select
+                        class="form-select"
+                        name="placement_status">
+
+                        <option>Placed</option>
+                        <option>Not Placed</option>
+
+                    </select>
+
+                </div>
+
+                <button
+                    class="btn btn-info w-100">
+
+                    Update Student
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

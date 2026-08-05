@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-success text-white">
+            <h2 class="text-center">All Students</h2>
+        </div>
+
+        <div class="card-body">
+
+            {% if students %}
+
+            <table class="table table-bordered table-hover table-striped">
+
+                <thead class="table-dark">
+
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>CGPA</th>
+                        <th>Skills</th>
+                        <th>Placement Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for student in students %}
+
+                    <tr>
+
+                        <td>{{ student[0] }}</td>
+                        <td>{{ student[1] }}</td>
+                        <td>{{ student[2] }}</td>
+                        <td>{{ student[3] }}</td>
+                        <td>{{ student[4] }}</td>
+                        <td>
+
+                            {% if student[5] == "Placed" %}
+
+                                <span class="badge bg-success">
+                                    Placed
+                                </span>
+
+                            {% else %}
+
+                                <span class="badge bg-danger">
+                                    Not Placed
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            {% else %}
+
+            <div class="alert alert-warning text-center">
+
+                No Student Records Found.
+
+            </div>
+
+            {% endif %}
+
+            <div class="text-center mt-3">
+
+                <a href="{{ url_for('home') }}"
+                   class="btn btn-primary">
+
+                    Back to Home
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
